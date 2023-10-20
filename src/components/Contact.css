@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    background: #c8e8e9;
+    min-height: 100vh;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.content{
+    width:80%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 40px 40px;
+    box-shadow: 0 5px 10px rgba(0,0 , 0, 0.2);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-side{
+    width: 25%;
+    height: 100%;
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.left-side::before{
+    content:'';
+    position: absolute;
+    height: 200px;
+    width: 2px;
+    right: -10px;
+    top: 25%;
+    background: #afafb6;
+}
+text-one,.text-two{
+    font-size: 14px;
+    color: #afafb6;
+}
+.topic-text{
+    font-size:23px;
+    font-weight: 600;
+    color: #3e2093;
+}
+.icons{
+    font-size: 30px;
+    color: #3e2093;
+    margin-bottom: 10px;
+}
+
+.right-side{
+    width:75%;
+    height: 100%;
+}
+.topic{
+    font-size: 18px;
+    font-weight: 500;
+}
+.input-box{
+    
+    height: 20px;
+    width:100%;
+    margin: 12px 0;
+    border: none;
+    border-radius: 6px;
+    
+}
+.input-box input, .input-box textarea  {
+    height: 25px;
+    width: 70%;
+    border: none;
+    background: #f0f1f8;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 15px;
+}
+.message-box{
+    
+}
+.input-box-message-box textarea{
+    min-height:60px;
+    width: 70%;
+    background: #f0f1f8;
+    border: none;
+    resize: none;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    
+}
+.button input {
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    background: #3e2093;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.button input: hover {
+    background: #5029bc;
+}
+@media (max-width: 950px){
+    .content{
+        width:90%;
+    padding: 20px 25px 40px 35px;
+    }
+}
+@media (max-width: 850px){
+    .content{
+        margin: 40px 0;
+        height: 100%;
+    }
+}
