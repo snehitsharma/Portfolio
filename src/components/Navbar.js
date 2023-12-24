@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./Navbar.css"
 import {FiMenu, FiX} from "react-icons/fi"
 
+
 //const navbarLinks = [{url : "/home", title: "Home"}]
 const Navbar = ({navbarLinks}) => {
   const [menuclicked, setMenuclicked] = useState(false);
