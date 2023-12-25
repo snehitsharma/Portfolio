@@ -6,7 +6,7 @@ import {AiFillPhone,AiFillMail} from 'react-icons/ai';
 const Contact = () => {
   return (
     <div className='container'>
-        <div className='content'>
+        <div className='contentCont'>
             <div className='left-side'>
                 <div className='address-details'>
                     <FaRegAddressBook className='icons'/>
@@ -53,4 +53,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact;

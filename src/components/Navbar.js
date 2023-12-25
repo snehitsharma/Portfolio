@@ -1,36 +1,37 @@
-import React,{useState} from 'react'
-import "./Navbar.css"
-import {FiMenu, FiX} from "react-icons/fi"
+// Navbar.js
+import React, { useState } from 'react';
+import { FiMenu, FiX } from "react-icons/fi";
+import { Link, useNavigate } from 'react-router-dom';
+import "./Navbar.css";
 
-
-//const navbarLinks = [{url : "/home", title: "Home"}]
-const Navbar = ({navbarLinks}) => {
-  const [menuclicked, setMenuclicked] = useState(false);
-
+const Navbar = ({ navbarLinks }) => {
+  const [menuClicked, setMenuClicked] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenuClicked = () => {
-    setMenuclicked(!menuclicked);
+    setMenuClicked(!menuClicked);
   };
   
   return (
     <nav className='navbar'>
-        <span className='navbar__logo'>Snehit</span>
-        {menuclicked ? <FiMenu size={25} className='navbar__menu' onClick={toggleMenuClicked}/> : 
-        <FiX size={25} className='navbar__menu' onClick={toggleMenuClicked}/> }
+      <span onClick={() => navigate("/")} className='navbar__logo'>Snehit</span>
+      {menuClicked ? (
+        <FiMenu size={25} className='navbar__menu' onClick={toggleMenuClicked} />
+      ) : (
+        <FiX size={25} className='navbar__menu' onClick={toggleMenuClicked} />
+      )}
 
-        <ul className= { menuclicked ? "navbar__list" : "navbar__list navbar__list--active"
-        }>
-            {navbarLinks.map((item) => {
-            return (
-            <li className='navbar__item' key={item.title}>
-            <a className='navbar__link' href={item.url}> {item.title} 
-            </a>
-            </li>
-            );
-        })} 
-        </ul>
+      <ul className={menuClicked ? "navbar__list" : "navbar__list navbar__list--active"}>
+        {navbarLinks.map((item) => (
+          <li className='navbar__item' key={item.title}>
+            <Link className='navbar__link' to={item.url}>
+              {item.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;
