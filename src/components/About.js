@@ -19,8 +19,8 @@ const About = ({ imagesrc }) => {
           heeloooo
         </h1>
         <div className='button'>
-          <input type='button' value='Contact Me'/>
-        </div>
+                    <input type='button' value='Contact Me' onClick={() => navigate("/contact")}/>
+                </div>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ const Contact = () => {
             </div>
             <div className='right-side'>
                 <div className='topic-text'>Send us a Message!</div>
-                <p>If you have any queries, you can send me a message from here. It's my pleasure to help you.</p>
+                <p>If you have any queries, you can send me a message from here.</p>
             
             <form action='#'>
                 <div className='input-box'>
