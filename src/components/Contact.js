@@ -4,6 +4,41 @@ import { FaRegAddressBook} from 'react-icons/fa';
 import {AiFillPhone,AiFillMail} from 'react-icons/ai';
 
 const Contact = () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const name = e.target[0].value;
+        const email = e.target[1].value;
+        const message = e.target[2].value;
+
+        console.log()
+      
+        try {
+          const response = await fetch('http://localhost:3000/contact', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify({
+                name:name,
+                email:email,
+                message:message
+            })
+          });
+      
+          if (response.ok) {
+            console.log('Form submitted successfully!');
+            // Handle successful response (e.g., display success message)
+          } else {
+            console.error('Form submission failed:', response.statusText);
+            // Handle error response (e.g., display error message)
+          }
+        } catch (error) {
+          console.error('Error during form submission:', error);
+          // Handle network errors
+        }
+      };
   return (
     <div className='container'>
         <div className='contentCont'>
@@ -32,18 +67,18 @@ const Contact = () => {
                 <div className='topic-text'>Send us a Message!</div>
                 <p>If you have any queries, you can send me a message from here.</p>
             
-            <form action='#'>
+                <form action='http://localhost:3001/contact' method='post' onSubmit={handleSubmit}>
                 <div className='input-box'>
-                    <input type='text' placeholder='Enter your name'/>
+                    <input type='text' name='name' placeholder='Enter your name'/>
                 </div>
                 <div className='input-box'>
-                    <input type='text' placeholder='Enter your Email'/>
+                    <input type='text' name='email' placeholder='Enter your Email'/>
                 </div>
                 <div className='input-box-message-box'>
-                    <textarea/>
+                    <textarea name='message'/>
                 </div>
                 <div className='button'>
-                    <input type='button' value='Contact Me'/>
+                    <button type='submit'>Contact Me!</button>
                 </div>
                 
             </form>
