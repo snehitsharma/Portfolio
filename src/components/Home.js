@@ -31,8 +31,8 @@ function App() {
       />
       <Slider
         Imagesrc={img05}
-        Title={"University of Massachusetts"}
-        Subtitle={"System Analysis, Business Intelligence, DBMS"}
+        Title={"SRM Institute of Science and Technology"}
+        Subtitle={"Business Intelligence, DBMS"}
         
       />
     </div>
