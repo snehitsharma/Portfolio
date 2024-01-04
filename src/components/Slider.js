@@ -3,7 +3,7 @@ import './Slider.css'
 import { useInView } from 'react-intersection-observer'
 
 
-const Slider = ({Imagesrc,Title,Subtitle,flipped}) => {
+const Slider = ({Imagesrc,Title,Subtitle,flipped,Subjects}) => {
     const { ref, inView } = useInView({
         /* Optional options */
         threshold: 0.4,
@@ -17,6 +17,7 @@ const Slider = ({Imagesrc,Title,Subtitle,flipped}) => {
             <div className='Slider-content'>
                 <h1 className='Slider-title'>{Title}</h1>
                 <p>{Subtitle}</p>
+                <p>{Subjects}</p>
             </div>
             </>
             );
@@ -27,6 +28,7 @@ const Slider = ({Imagesrc,Title,Subtitle,flipped}) => {
             <div className='Slider-content'>
                 <h1 className='Slider-title'>{Title}</h1>
                 <p>{Subtitle}</p>
+                <p>{Subjects}</p>
                 
             </div>
             <img src={Imagesrc} alt="portfolio" className='Slider_image'/>
